@@ -10,5 +10,9 @@ def hello():
 def hostname():
     return socket.gethostname()
 
+@app.route("/healthz")
+def healthcheck():
+    return "OK"
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
